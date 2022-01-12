@@ -7,8 +7,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="tb_user")
+@Table(name = "tb_user")
 public class User {
+	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +21,6 @@ public class User {
 	}
 
 	public User(Long id, String email) {
-		super();
 		this.id = id;
 		this.email = email;
 	}
@@ -42,4 +42,5 @@ public class User {
 	}
 	
 	
+
 }
