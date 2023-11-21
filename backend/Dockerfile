@@ -19,7 +19,7 @@ FROM openjdk:17-jdk-slim
 # Expor a porta 8080
 EXPOSE 8080
 
-# Informando nosso estágio: build e informando o que queremos copiar seguido do nosso novo destino .jar.
+# Informando nosso estágio: build e informando o que queremos copiar seguido do nosso novo .jar.
 COPY --from=build /backend/target/dsmovie-0.0.1-SNAPSHOT.jar app.jar
 
 ENTRYPOINT [ "java", "-jar", "app.jar" ]
