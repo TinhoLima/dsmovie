@@ -25,12 +25,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--color-primary);
+    border: 1px solid #8b8b8b;
     cursor: pointer;
 }
 
 .dsmovie-pagination-button svg {
-    filter: brightness(0) saturate(100%) invert(26%) sepia(19%) saturate(7395%) hue-rotate(234deg) brightness(89%) contrast(92%);
+    filter: brightness(2) saturate(100%) invert(17%) sepia(55%) saturate(7395%) hue-rotate(385deg) brightness(100%) contrast(180%);
 }
 
 .dsmovie-pagination-button:disabled {

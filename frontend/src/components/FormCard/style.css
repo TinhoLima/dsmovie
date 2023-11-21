@@ -8,12 +8,16 @@
     width: calc(100% - 20px);
 }
 
+.dsmovie-form option {
+    text-align: center;
+}
+
 .dsmovie-form-group {
-    margin-bottom: 20px;
+    margin-bottom:20px;
 }
 
 .dsmovie-form-group label {
-    font-size: 12px;
+    font-size: 14px;
     color: #aaa;
 }
 
@@ -34,19 +38,20 @@
     align-items: center;
     padding: 10px 10px 20px 10px;
     border-radius: 0 0 8px 8px;
+    margin-bottom: 20px;
 }
 
 .dsmovie-card-bottom-container h3 {
-    color: #4A4A4A;
+    color: #2c2c2c;
     text-align: center;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700;
-    margin-bottom: 10px;
     min-height: 40px;
+    margin-bottom: 20px;
 }
 
 .dsmovie-btn {
-    background-color: var(--color-primary);
+    color: var(--color-primary);
     font-size: 14px;
     font-weight: 700;
     height: 40px;
