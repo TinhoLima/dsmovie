@@ -20,6 +20,6 @@ FROM openjdk:17-jdk-slim
 EXPOSE 8080
 
 # Informando nosso estágio: build e informando o que queremos copiar seguido do nosso novo .jar.
-COPY --from=build /backend/target/dsmovie-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /target/dsmovie-0.0.1-SNAPSHOT.jar app.jar
 
 ENTRYPOINT [ "java", "-jar", "app.jar" ]
