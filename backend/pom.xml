@@ -37,8 +37,8 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
+			<groupId>org.postgre</groupId>
+			<artifactId>postgre</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
