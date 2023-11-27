@@ -4,6 +4,8 @@ import axios from "axios";
 import { BASE_URL } from "utils/requests";
 import { useState, useEffect } from "react";
 import { MoviePage } from "types/movie";
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 function Listing() {
 
@@ -28,29 +30,30 @@ function Listing() {
         })
     }, [pageNumber]);
 
-    const handlePageChange = (newPageNumber : number) => {
+    const handlePageChange = (newPageNumber: number) => {
         setPageNumber(newPageNumber);
     }
 
     return (
         <>
+            <SkeletonTheme baseColor="#7a7a7a" highlightColor="#fff">
+                <Pagination page={page} onChange={handlePageChange} />
 
-            <Pagination page={page} onChange={handlePageChange}/>
+                <div className="container">
+                    <div className="row">
+                        <Skeleton count={5} height={300} />
+                        {page.content.map(movie => (
+                            <div key={movie.id} className="col-sm-5 col-lg-3 col-x1-2 mb-3">
+                                <MovieCard movie={movie} />
+                            </div>
+                        )
+                        )}
 
-            <div className="container">
-                <div className="row">
-                    {page.content.map(movie => (
-                        <div key={movie.id} className="col-sm-5 col-lg-3 col-x1-2 mb-3">
-                            <MovieCard movie={movie} />
-                        </div>
-                    )
-                    )}
-
+                    </div>
                 </div>
-            </div>
 
-            <Pagination page={page} onChange={handlePageChange}/>
-
+                <Pagination page={page} onChange={handlePageChange} />
+            </SkeletonTheme>
         </>
     )
 
