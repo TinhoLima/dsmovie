@@ -4,12 +4,13 @@ import axios from "axios";
 import { BASE_URL } from "utils/requests";
 import { useState, useEffect } from "react";
 import { MoviePage } from "types/movie";
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import ComponentSkeleton from '../../components/Skeleton'
 
 function Listing() {
 
     const [pageNumber, setPageNumber] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     const [page, setPage] = useState<MoviePage>({
         content: [],
@@ -27,6 +28,7 @@ function Listing() {
         axios.get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=id`).then(resposta => {
             const data = resposta.data as MoviePage;
             setPage(data);
+            setLoading(false);
         })
     }, [pageNumber]);
 
@@ -36,12 +38,13 @@ function Listing() {
 
     return (
         <>
-            <SkeletonTheme baseColor="#7a7a7a" highlightColor="#fff">
-                <Pagination page={page} onChange={handlePageChange} />
+            <Pagination page={page} onChange={handlePageChange} />
+
+            {loading && <ComponentSkeleton />}
+            {!loading &&
 
                 <div className="container">
                     <div className="row">
-                        <Skeleton count={5} height={300} />
                         {page.content.map(movie => (
                             <div key={movie.id} className="col-sm-5 col-lg-3 col-x1-2 mb-3">
                                 <MovieCard movie={movie} />
@@ -51,9 +54,9 @@ function Listing() {
 
                     </div>
                 </div>
+            }
 
-                <Pagination page={page} onChange={handlePageChange} />
-            </SkeletonTheme>
+            <Pagination page={page} onChange={handlePageChange} />
         </>
     )
 
