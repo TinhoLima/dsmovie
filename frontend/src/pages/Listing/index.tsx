@@ -36,6 +36,8 @@ function Listing() {
         setPageNumber(newPageNumber);
     }
 
+    window.alert('Tempo estimado para carregamento da páginda é de: 2 minutos.')
+
     return (
         <>
             <Pagination page={page} onChange={handlePageChange} />
