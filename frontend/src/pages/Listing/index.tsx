@@ -29,14 +29,13 @@ function Listing() {
             const data = resposta.data as MoviePage;
             setPage(data);
             setLoading(false);
+            window.alert('Tempo estimado para carregamento da páginda é de: 2 minutos.')
         })
     }, [pageNumber]);
 
     const handlePageChange = (newPageNumber: number) => {
         setPageNumber(newPageNumber);
     }
-
-    window.alert('Tempo estimado para carregamento da páginda é de: 2 minutos.')
 
     return (
         <>
