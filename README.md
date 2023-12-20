@@ -1,6 +1,8 @@
 # DSMovie
 DSMovie é uma aplicação full stack web e mobile construída durante a Semana Spring React, evento organizado pela DevSuperior.
 
+<img width="1266" alt="Screen Shot 2023-12-20" src="/frontend/src/assets/img/capa.png">
+
 ## Tecnologias
 O sistema utiliza React em seu front-end e Spring no back-end.
 
